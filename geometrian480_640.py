@@ -313,7 +313,7 @@ class App:
 
         ### 弾発射の判定
         if pyxel.btnp(pyxel.KEY_SPACE) or pyxel.btnp(pyxel.GAMEPAD1_BUTTON_A) or pyxel.btnp(pyxel.GAMEPAD1_BUTTON_B):
-            App.bullet_list.append(Bullet(myship.x + 7,myship.y))
+            App.bullet_list.append(Bullet(myship.x,myship.y))
             pyxel.play(0,0)
 
         ### 弾の生存確認
