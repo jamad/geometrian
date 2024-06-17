@@ -143,7 +143,7 @@ class Enemy:
         
         #pyxel.blt(self.x, self.y, 0, u * 16, v * 16, 16, 16, 0)
 
-        pyxel.circ(self.x, self.y,6,6) # enemy to draw as circle for now
+        pyxel.circb(self.x, self.y,6,4) # enemy to draw as circle for now
 
 
         if App.debugdisp and self.is_flying:
@@ -232,7 +232,15 @@ class Myship:
         
         #pyxel.blt(self.x,self.y,0,self.img*CHAR_SIZE,CHAR_SIZE,CHAR_SIZE,24,0) # change image dependent on its direction
         
-        pyxel.circ(self.x, self.y,6,4) # enemy to draw as circle for now
+        #pyxel.circ(self.x, self.y,6,7) # enemy to draw as circle for now
+
+        p0x,p0y=self.x ,self.y
+        p1x,p1y=self.x+CHAR_SIZE/2 ,self.y+CHAR_SIZE
+        p2x,p2y=self.x-CHAR_SIZE/2 ,self.y+CHAR_SIZE
+
+        pyxel.line(p0x, p0y,p1x, p1y,7) # enemy to draw as circle for now
+        pyxel.line(p1x, p1y,p2x, p2y,7) # enemy to draw as circle for now
+        pyxel.line(p2x, p2y,p0x, p0y,7) # enemy to draw as circle for now
 
 myship = Myship()
 
