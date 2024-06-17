@@ -140,7 +140,11 @@ class Enemy:
     def draw(self):
         u = self.is_flying and 2 + (0 < self.dx) or (self.cnt // 30) % 2
         v = self.num + 3
-        pyxel.blt(self.x, self.y, 0, u * 16, v * 16, 16, 16, 0)
+        
+        #pyxel.blt(self.x, self.y, 0, u * 16, v * 16, 16, 16, 0)
+
+        pyxel.circ(self.x, self.y,6,6) # enemy to draw as circle for now
+
 
         if App.debugdisp and self.is_flying:
             pyxel.text(self.x, self.y + 16, f'{int(self.x)},{int(self.y)}', 7)
@@ -225,7 +229,10 @@ class Myship:
         self.y = min(APP_HEIGHT-CHAR_SIZE,max(0, self.y+dy)) # extended y move , and clamping
 
     def draw(self):
-        pyxel.blt(self.x,self.y,0,self.img*CHAR_SIZE,CHAR_SIZE,CHAR_SIZE,24,0) # change image dependent on its direction
+        
+        #pyxel.blt(self.x,self.y,0,self.img*CHAR_SIZE,CHAR_SIZE,CHAR_SIZE,24,0) # change image dependent on its direction
+        
+        pyxel.circ(self.x, self.y,6,4) # enemy to draw as circle for now
 
 myship = Myship()
 
