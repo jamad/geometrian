@@ -341,6 +341,7 @@ class App:
             [mes.draw() for mes in App.message_list]                        # メッセージの描画
             pyxel.text( APP_WIDTH//8*7,10,   f"{App.score}" ,7)             # score info
             pyxel.text(10,10,f"STAGE : {App.stage_number}",7)               # stage info
+            
         else:
             pyxel.blt(APP_WIDTH//4,APP_HEIGHT//2-50,2,0,32,256,48,0)                                   # title image
             pyxel.text(82+APP_WIDTH//4,APP_HEIGHT//2+50,"Push BUTTON to Start",pyxel.frame_count%30)    # push to start message
@@ -357,5 +358,7 @@ class App:
             # line
             for enemy in enemy_group.flying_enemy_list:
                 pyxel.line(enemy.x, enemy.y, myship.x, myship.y,7)
+                
+            pyxel.text(APP_WIDTH//2,APP_HEIGHT//2,"bug1 : enemy flyable count stops by unknown reason",7)                                      # version info
 
 App()
